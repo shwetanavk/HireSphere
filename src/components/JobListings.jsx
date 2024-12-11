@@ -4,6 +4,8 @@ import Listings from "./Listings";
 import { useEffect, useState } from "react";
 import Spinner from "./Spinner";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 const JobListings = ({ isHome = false }) => {
   // const JobListings = isHome ? jobs.slice(0, 3) : jobs;
   const [jobs, setJobs] = useState([]);
@@ -11,7 +13,9 @@ const JobListings = ({ isHome = false }) => {
 
   useEffect(() => {
     const fetchJobs = async () => {
-      const apiURL = isHome ? "/api/jobs?_limit=3" : "/api/jobs";
+      const apiURL = isHome
+        ? `${API_BASE_URL}/jobs?_limit=3`
+        : `${API_BASE_URL}/jobs`;
       try {
         const res = await fetch(apiURL);
         const data = await res.json();

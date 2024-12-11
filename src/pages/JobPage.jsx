@@ -3,6 +3,8 @@ import { FaArrowLeft, FaMapMarker } from "react-icons/fa";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 const JobPage = ({ deleteJob }) => {
   const job = useLoaderData();
   // const [job, setJob] = useState(null);
@@ -128,7 +130,7 @@ const JobPage = ({ deleteJob }) => {
 };
 
 const jobLoader = async ({ params }) => {
-  const res = await fetch(`/api/jobs/${params.id}`);
+  const res = await fetch(`${API_BASE_URL}/jobs/${params.id}`);
   const data = res.json();
   return data;
 };

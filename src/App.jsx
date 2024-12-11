@@ -12,10 +12,12 @@ import JobPage, { jobLoader } from "./pages/JobPage";
 import AddJobPage from "./pages/AddJobPage";
 import EditJobPage from "./pages/EditJobPage";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 const App = () => {
   //Add new Job
   const addJob = async (newJob) => {
-    await fetch("/api/jobs", {
+    await fetch(`${API_BASE_URL}/jobs`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newJob),
@@ -25,13 +27,13 @@ const App = () => {
 
   const deleteJob = async (id) => {
     console.log(id);
-    await fetch(`/api/jobs/${id}`, {
+    await fetch(`${API_BASE_URL}/jobs/${id}`, {
       method: "DELETE",
     });
   };
 
   const updateJob = async (updatedJob) => {
-    await fetch(`/api/jobs/${updatedJob.id}`, {
+    await fetch(`${API_BASE_URL}/jobs/${updatedJob.id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedJob),
