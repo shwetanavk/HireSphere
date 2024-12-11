@@ -84,5 +84,25 @@
         "contactPhone": "555-555-5555"
       }
     }
+  ],
+  "company": {
+    "name": "abc",
+    "branchLocation": ["India", "Canada", "USA"]
+  },
+  "country": [
+    {
+      "id": "1",
+      "title": "Senior React Developer",
+      "type": "Full-Time",
+      "location": "Boston, MA",
+      "description": "We are seeking a talented Front-End Developer to join our team in Boston, MA. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience working with modern JavaScript frameworks such as React or Angular.",
+      "salary": "$70K - $80K",
+      "company": {
+        "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment.",
+        "name": "NewTek Solutions",
+        "contactEmail": "contact@teksolutions.com",
+        "contactPhone": "555-555-5555"
+      }
+    }
   ]
 }
